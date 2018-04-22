@@ -65,15 +65,13 @@ DISPLAY_COUNTER:
   DISPLAY_COUNTER_multidigit:
     movff counter, counter_dh0
     clrf counter_dh1
-  DISPLAY_COUNTER_multidigit_step_1:
+  DISPLAY_COUNTER_multidigit_s:
     movlw 10
     cmpslt counter_dh0
     goto DISPLAY_COUNTER_multidigit_divided
-    goto DISPLAY_COUNTER_multidigit_step_0
-  DISPLAY_COUNTER_multidigit_step_0:
     subwf counter_dh0, f
     incf counter_dh1
-    goto DISPLAY_COUNTER_multidigit_step_1
+    goto DISPLAY_COUNTER_multidigit_s
   DISPLAY_COUNTER_multidigit_divided:
     ;select Counter 0, display the tens
     bsf PORTD, 3
