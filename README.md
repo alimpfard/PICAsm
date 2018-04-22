@@ -1,4 +1,4 @@
 # PICAsm
 PIC assembly; delusions of grandeur
 
-How one aseembly is clearly inferior by design
+How one assembly is clearly inferior by design
