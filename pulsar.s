@@ -119,6 +119,7 @@ isr_hi:
   movf t0_s, WREG
   movff t0_h, t0_s
   movwf TMR0L, f
+  movwf t0_h, f
 
   end_int:
   retfie
