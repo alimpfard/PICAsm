@@ -107,6 +107,7 @@ hi_isr:
   movf counter_s, WREG
   movff counter_h, counter_s
   movwf counter, f
+  movwf counter_h, f
 
   ;transition to next stage (color)
   rlncf RYGR
