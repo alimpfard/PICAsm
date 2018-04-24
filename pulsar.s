@@ -21,7 +21,7 @@ main:
   ;call setup_part_a ;50% duty cycle
   ;call setup_part_b ;30% duty cycle
   movlw 4
-  movwf ax, f
+  movwf ax
   call setup_part_c  ;(ax/10)% duty cycle
 main_loop:
   call writesig
@@ -29,55 +29,55 @@ main_loop:
 
 setup_part_a:
   movlw 5
-  movwf ax, f
+  movwf ax
   call setup_part_c
   return
 
 setup_part_b:
   movlw 3
-  movwf ax, f
+  movwf ax
   call setup_part_c
   return
 
 scale_argm:
   movlw 1
-  cmpfsgt ax
+  cpfsgt ax
   retlw 2
   ;
   movlw 2
-  cmpsgt ax
+  cpfsgt ax
   retlw 3
   ;
   movlw 3
-  cmpsgt ax
+  cpfsgt ax
   retlw 5
   ;
   movlw 4
-  cmpsgt ax
+  cpfsgt ax
   retlw 6
   ;
   movlw 5
-  cmpsgt ax
+  cpfsgt ax
   retlw 8
   ;
   movlw 6
-  cmpsgt ax
+  cpfsgt ax
   retlw 9
   ;
   movlw 7
-  cmpsgt ax
+  cpfsgt ax
   retlw 11
   ;
   movlw 8
-  cmpsgt ax
+  cpfsgt ax
   retlw 12
   ;
   movlw 9
-  cmpsgt ax
+  cpfsgt ax
   retlw 13
   ;
   movlw 10
-  cmpsgt ax
+  cpfsgt ax
   retlw 15
   ;
 
@@ -91,7 +91,7 @@ setup_part_c:
   movwf t0_hh
   call scale_argm
   ;255 - scaled(ax) -> t0_s
-  subwf t0_hh, f
+  subwf t0_hh
   movff t0_hh, t0_s
   
   movlw b'11000011'
@@ -118,8 +118,8 @@ isr_hi:
 
   movf t0_s, WREG
   movff t0_h, t0_s
-  movwf TMR0L, f
-  movwf t0_h, f
+  movwf TMR0L
+  movwf t0_h
 
   end_int:
   retfie

@@ -19,10 +19,10 @@ goto low_isr
 
 main:
   movlw 30
-  movwf counter, f
-  movwf counter_h, f
+  movwf counter
+  movwf counter_h
   movlw 5
-  movwf counter_s, f
+  movwf counter_s
 
   ;set color bit
   movlw b'00000001'
@@ -30,7 +30,7 @@ main:
 
   ;timer on, prescaler to 1:4, internal 4MHz osc
   movlw b'10000001'
-  movwf T0CON, f
+  movwf T0CON
 
   ;global interrupt on, timer 0 IE on
   bsf INTCON, 7
@@ -69,7 +69,7 @@ DISPLAY_COUNTER:
     movlw 10
     cmpslt counter_dh0
     goto DISPLAY_COUNTER_multidigit_divided
-    subwf counter_dh0, f
+    subwf counter_dh0
     incf counter_dh1
     goto DISPLAY_COUNTER_multidigit_s
   DISPLAY_COUNTER_multidigit_divided:
@@ -100,14 +100,14 @@ hi_isr:
   bcf INTCON, TMR0IF
 
   ;no real bother if counter isn't 0
-  decfsz counter, f
+  decfsz counter
   goto end_int
 
   ;counter reached zero, swap counter_s, counter_h; set counter to next stage's value
   movf counter_s, WREG
   movff counter_h, counter_s
-  movwf counter, f
-  movwf counter_h, f
+  movwf counter
+  movwf counter_h
 
   ;transition to next stage (color)
   rlncf RYGR

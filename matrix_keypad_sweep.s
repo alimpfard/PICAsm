@@ -10,7 +10,7 @@ goto main
 
 main:
   movlw 0x001
-  movwf BR0, f
+  movwf BR0
 main_loop:
   call sweep
   call act_if_pressed
