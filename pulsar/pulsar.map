@@ -1,0 +1,54 @@
+MPLINK 4.45, Linker
+Linker Map File - Created Wed Jun 20 14:58:31 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000004
+                   .org_2       code   0x000008    program   0x000004
+                   .org_3       code   0x000018    program   0x0000a2
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000003      
+                            0x000008    0x00000b      
+                            0x000018    0x0000b9      
+            170 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  end_int   0x0000b8    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+                   isr_hi   0x0000a4    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+                   isr_lo   0x0000a0    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+                     main   0x00001e    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+                main_loop   0x00002a    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+               scale_argm   0x000046    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+             setup_part_a   0x000032    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+             setup_part_b   0x00003c    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+             setup_part_c   0x000082    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+                 writesig   0x00001c    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                 writesig   0x00001c    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+                     main   0x00001e    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+                main_loop   0x00002a    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+             setup_part_a   0x000032    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+             setup_part_b   0x00003c    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+               scale_argm   0x000046    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+             setup_part_c   0x000082    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+                   isr_lo   0x0000a0    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+                   isr_hi   0x0000a4    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+                  end_int   0x0000b8    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\pulsar\pulsar.asm
+
+

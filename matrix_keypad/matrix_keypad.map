@@ -1,0 +1,52 @@
+MPLINK 4.45, Linker
+Linker Map File - Created Wed Jun 20 15:04:21 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000064
+                   .cinit    romdata   0x000064    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000065      
+            102 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+           act_if_pressed   0x000040    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+                     beep   0x000004    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+                     main   0x000008    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+                main_loop   0x00000c    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+                  msdelay   0x000006    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+             read_stage_0   0x000054    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+             read_stage_1   0x00005c    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+              set_stage_0   0x000048    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+              set_stage_1   0x00004e    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+                    sweep   0x00001c    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+             sweep_loop_0   0x00001e    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     beep   0x000004    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+                  msdelay   0x000006    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+                     main   0x000008    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+                main_loop   0x00000c    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+                    sweep   0x00001c    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+             sweep_loop_0   0x00001e    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+           act_if_pressed   0x000040    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+              set_stage_0   0x000048    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+              set_stage_1   0x00004e    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+             read_stage_0   0x000054    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+             read_stage_1   0x00005c    program     static Z:\home\ali\Documents\playground\nonsensical\PICAsm\matrix_keypad\matrix_keypad_sweep.asm
+
+

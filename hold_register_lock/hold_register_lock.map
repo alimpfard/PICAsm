@@ -1,0 +1,42 @@
+MPLINK 4.45, Linker
+Linker Map File - Created Wed Jun 20 15:13:02 2018
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x00002c
+                   .cinit    romdata   0x00002c    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00002d      
+            46 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+     block_button_pressed   0x000018    program     static C:\users\ali\My Documents\playground\nonsensical\PICAsm\hold_register_lock\hold_register_lock.asm
+     check_button_pressed   0x00001a    program     static C:\users\ali\My Documents\playground\nonsensical\PICAsm\hold_register_lock\hold_register_lock.asm
+                  display   0x000024    program     static C:\users\ali\My Documents\playground\nonsensical\PICAsm\hold_register_lock\hold_register_lock.asm
+                     main   0x000004    program     static C:\users\ali\My Documents\playground\nonsensical\PICAsm\hold_register_lock\hold_register_lock.asm
+                main_loop   0x00000a    program     static C:\users\ali\My Documents\playground\nonsensical\PICAsm\hold_register_lock\hold_register_lock.asm
+                  msdelay   0x000028    program     static C:\users\ali\My Documents\playground\nonsensical\PICAsm\hold_register_lock\hold_register_lock.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     main   0x000004    program     static C:\users\ali\My Documents\playground\nonsensical\PICAsm\hold_register_lock\hold_register_lock.asm
+                main_loop   0x00000a    program     static C:\users\ali\My Documents\playground\nonsensical\PICAsm\hold_register_lock\hold_register_lock.asm
+     block_button_pressed   0x000018    program     static C:\users\ali\My Documents\playground\nonsensical\PICAsm\hold_register_lock\hold_register_lock.asm
+     check_button_pressed   0x00001a    program     static C:\users\ali\My Documents\playground\nonsensical\PICAsm\hold_register_lock\hold_register_lock.asm
+                  display   0x000024    program     static C:\users\ali\My Documents\playground\nonsensical\PICAsm\hold_register_lock\hold_register_lock.asm
+                  msdelay   0x000028    program     static C:\users\ali\My Documents\playground\nonsensical\PICAsm\hold_register_lock\hold_register_lock.asm
+
+
