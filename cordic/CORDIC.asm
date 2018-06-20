@@ -1,6 +1,5 @@
 #include <p18f452.inc>
 
-
 movlf macro lit, dest
 	movlw lit
 	movff WREG, dest
@@ -18,12 +17,19 @@ endm
 
 S_B equ 0x100
 SH_PS equ 0x102
+V0_SIGN equ 0x104
 shr2 macro reg0, reg1, lit
 	local loop
+	movff reg0, V0_SIGN
+	movlw 0x8000
+	andwf V0_SIGN
 	movff STATUS, S_B
 	movlw lit
 	loop:
+	btfss V0_SIGN, 0
 	bcf STATUS, C
+	btfsc V0_SIGN, 0
+	bsf STATUS, C
 	rrcf reg1
 	rrcf reg0
 	decfsz WREG
@@ -594,9 +600,9 @@ cordic:
 ; input at angle, 32 bits
 ; output at sine, 16 bits, cosine 16 bits
 clrf quadrant
-btfsc angle_3, 6
+btfsc angle_0, 0
 bsf quadrant, 0
-btfsc angle_3, 7
+btfsc angle_0, 1
 bsf quadrant, 1
 
 ; adjust quadrants
@@ -605,17 +611,20 @@ goto quadrant1x
 btfss quadrant, 1
 goto quadrantxx
 ;case 01
+; x_start => x_0
 filltbl x_0
 movff y_start_0, TABLAT
 negate_float TABLAT
 tblwt*+
 movff y_start_1, TABLAT
 tblwt*
+; y_start => y_0
 filltbl y_0
 movff x_start_0, TABLAT
 tblwt*+
 movff x_start_1, TABLAT
 tblwt*
+; 00, angle[29:0] => z_0
 filltbl z_0
 movff angle_0, TABLAT
 bcf TABLAT, 0
@@ -660,6 +669,7 @@ goto fquad
 
 ;case 11, 00
 quadrantxx:
+; nothing to change for this quadrant
 filltbl x_0
 movff x_start_0, TABLAT
 tblwt*+
@@ -678,7 +688,7 @@ atg_1 equ 0x37
 atg_2 equ 0x38
 atg_3 equ 0x39
 
-;e [data iterate i 0 16 1]
+;e [data iterate i 0 15 1]
 ;p {
 ;filltbl x_$i$
 ;tblrd *+
@@ -1272,62 +1282,25 @@ btfss z_sign, 7
 btg atg_0, 0
 add4prg atg_0,atg_1,atg_2,atg_3, z_14, z_15
 
-filltbl x_15
-tblrd *+
-movff TABLAT, x_shr_0
-tblrd *
-movff TABLAT, x_shr_1
-shr2 x_shr_0, x_shr_1, 15
-filltbl y_15
-tblrd *+
-movff TABLAT, y_shr_0
-tblrd *
-movff TABLAT, y_shr_1
-shr2 y_shr_0, y_shr_1, 15
-filltbl z_15
-tblrd *+
-tblrd *+
-tblrd *+
-tblrd *
-movff TABLAT, z_sign
-btfss z_sign, 7
-btg y_shr_0, 0
-add2prg y_shr_0, y_shr_1, x_15,  x_16
-btfss z_sign, 7
-btg x_shr_0, 0
-add2prg x_shr_0, x_shr_1, y_15, y_16
-filltbl atan_tbl_15
-tblrd *+
-movff TABLAT, atg_0
-tblrd *+
-movff TABLAT, atg_1
-tblrd *+
-movff TABLAT, atg_2
-tblrd *
-movff TABLAT, atg_3
-btfss z_sign, 7
-btg atg_0, 0
-add4prg atg_0,atg_1,atg_2,atg_3, z_15, z_16
-
 
 filltbl x_15
-tblrd *+
-movff TABLAT, sine_0
-tblrd *+
-movff TABLAT, sine_1
-filltbl y_15
 tblrd *+
 movff TABLAT, cosine_0
 tblrd *+
 movff TABLAT, cosine_1
+filltbl y_15
+tblrd *+
+movff TABLAT, sine_0
+tblrd *+
+movff TABLAT, sine_1
 return
 
 #define An0 B'10100111'
 #define An1 B'11010010'
-#define a0 B'00110101' ;75 degrees
-#define a1 B'01010101'
-#define a2 B'01010101'
-#define a3 B'01010101'
+#define a0 B'00100000' ;45 degrees
+#define a1 B'00000000'
+#define a2 B'00000000'
+#define a3 B'00000000'
 
 main:
 	;test stuff, nya
